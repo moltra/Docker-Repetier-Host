@@ -14,11 +14,12 @@ RUN apt-get update -qq && apt-get -qqy install \
     libglew2.0
 
 ### Install dependencies for Slic3r.
-RUN apt -qqy install \
-    libsm6 \
-    freeglut3 \
-    libglu1-mesa \
-    libxmu6
+## looks like Slic3r might be dead.
+#RUN apt -qqy install \
+#    libsm6 \
+#    freeglut3 \
+#    libglu1-mesa \
+#    libxmu6
 
 ### Install RepetierHost
 WORKDIR /opt/
@@ -29,10 +30,10 @@ RUN tar --gzip --extract -f repetierHostLinux_2_3_1.tgz
 
 ### Install Slic3r
 
-RUN wget --quiet \
-    https://github.com/slic3r/Slic3r/releases/download/1.3.0/slic3r-1.3.0-linux-x64.tar.bz2
+#RUN wget --quiet \
+#    https://github.com/slic3r/Slic3r/releases/download/1.3.0/slic3r-1.3.0-linux-x64.tar.bz2
 
-RUN tar --gzip --extract -f slic3r-1.3.0-linux-x64.tar.bz2
+# RUN tar --gzip --extract -f slic3r-1.3.0-linux-x64.tar.bz2
 
 RUN wget --quiet \
     https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.5.1/PrusaSlicer-2.5.1+linux-x64-GTK3-202303151247.tar.bz2
