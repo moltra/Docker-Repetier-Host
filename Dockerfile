@@ -1,6 +1,5 @@
 FROM ubuntu:latest
 
-MAINTAINER Artyom V. Poptsov <poptsov.artyom@gmail.com>
 
 RUN echo "America/New_York" > /etc/timezone
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
@@ -24,20 +23,20 @@ RUN apt -qqy install \
 ### Install RepetierHost
 WORKDIR /opt/
 RUN wget --quiet \
-    http://download.repetier.com/files/host/linux/repetierHostLinux_2_1_2.tgz
+    https://download3.repetier.com/files/host/linux/repetierHostLinux_2_3_1.tgz
 
-RUN tar --gzip --extract -f repetierHostLinux_2_1_2.tgz
+RUN tar --gzip --extract -f repetierHostLinux_2_3_1.tgz
 
 ### Install Slic3r
 
 RUN wget --quiet \
-    https://dl.slic3r.org/linux/slic3r-linux-x86_64-1-2-9-stable.tar.gz
+    https://github.com/slic3r/Slic3r/releases/download/1.3.0/slic3r-1.3.0-linux-x64.tar.bz2
 
-RUN tar --gzip --extract -f slic3r-linux-x86_64-1-2-9-stable.tar.gz
+RUN tar --gzip --extract -f slic3r-1.3.0-linux-x64.tar.bz2
 
 RUN wget --quiet \
-    https://github.com/prusa3d/Slic3r/releases/download/version_1.40.1-rc2/Slic3rPE-1.40.1-rc2.linux64-full-201807031509.tar.bz2
+    https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.5.1/PrusaSlicer-2.5.1+linux-x64-GTK3-202303151247.tar.bz2
 
-RUN tar --bzip --extract -f Slic3rPE-1.40.1-rc2.linux64-full-201807031509.tar.bz2
+RUN tar --bzip --extract -f PrusaSlicer-2.5.1+linux-x64-GTK3-202303151247.tar.bz2
 
 WORKDIR /opt/RepetierHost/
