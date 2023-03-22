@@ -5,13 +5,13 @@ RUN echo "America/New_York" > /etc/timezone
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 
 ### Install basic packages.
-RUN apt-get update -qq && apt-get -qqy install \
-    wget \
-    xz-utils \
-    libmono-system-windows-forms4.0-cil \
-    libgtk2.0-0 \
-    libmono-system-serviceprocess4.0-cil \
-    libglew2.0
+# RUN apt-get update -qq && apt-get -qqy install \
+#     wget \
+#     xz-utils \
+#     libmono-system-windows-forms4.0-cil \
+#     libgtk2.0-0 \
+#     libmono-system-serviceprocess4.0-cil \
+#     libglew2.0
 
 ### Install dependencies for Slic3r.
 ## looks like Slic3r might be dead.
